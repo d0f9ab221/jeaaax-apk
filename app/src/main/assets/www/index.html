@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizan | Welcome</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    
+    <!-- PWA Meta Tags & Manifest Link (CRITICAL FOR PWABUILDER) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#05050a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Faizan">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=192&q=80">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Canvas for Particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Ambient Audio (Optional/Interactive) -->
+    <audio id="ambientSound" loop src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" volume="0.1"></audio>
+    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-84.wav"></audio>
+
+    <!-- Audio Toggle Button -->
+    <button id="audioToggle" class="audio-btn" aria-label="Toggle Sound">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- MAIN LOADING SCREEN -->
+    <div id="loaderContainer" class="loader-container">
+        <div class="loader-content">
+            <!-- Cyberpunk Grid Background -->
+            <div class="grid-overlay"></div>
+
+            <!-- Glowing Core -->
+            <div class="core-glow"></div>
+
+            <!-- Main Animated Name -->
+            <div class="name-wrapper">
+                <h1 class="glitch-name" data-text="FAIZAN">FAIZAN</h1>
+                <p class="subtitle">SYSTEM INITIALIZATION</p>
+            </div>
+
+            <!-- Circular Progress Ring -->
+            <div class="progress-ring-container">
+                <svg class="progress-ring" width="200" height="200">
+                    <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="transparent" r="80" cx="100" cy="100"/>
+                    <circle id="progressCircle" class="progress-ring__circle" stroke="#00f3ff" stroke-width="6" fill="transparent" r="80" cx="100" cy="100"/>
+                </svg>
+                <div class="progress-text">
+                    <span id="progressPercent">0</span><span class="percent-symbol">%</span>
+                </div>
+            </div>
+
+            <!-- Status Messages -->
+            <div class="status-box">
+                <div class="status-line"><span class="status-arrow">&gt;</span> <span id="statusText">Establishing secure connection...</span></div>
+                <div class="status-subline">SYS.LOC: 0x77F / PORT: 8080</div>
+            </div>
+
+            <!-- Interactive Skip/Enter Button (Hidden until loaded) -->
+            <button id="enterBtn" class="enter-btn hidden">
+                <span class="btn-glow"></span>
+                <span class="btn-text">ENTER SYSTEM</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT (Revealed after loading) -->
+    <main id="mainContent" class="main-content hidden">
+        <header class="navbar">
+            <div class="logo">FAIZAN<span class="dot">.</span></div>
+            <nav>
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+                <!-- PWA Install Button (Hidden by default, shown via JS if installable) -->
+                <button id="pwaInstallBtn" class="pwa-install-btn hidden">
+                    <i class="fas fa-download"></i> Install App
+                </button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-info">
+                <span class="badge">CREATIVE DEVELOPER & DESIGNER</span>
+                <h2 class="hero-title">Crafting Digital <br><span class="gradient-text">Masterpieces</span></h2>
+                <p class="hero-desc">Welcome to my digital realm. I build high-performance web applications, immersive interactive experiences, and clean modern interfaces.</p>
+                <div class="hero-actions">
+                    <a href="#" class="primary-btn">Explore Work</a>
+                    <a href="#" class="secondary-btn">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" alt="Abstract 3D Art" class="visual-img">
+                    <div class="card-overlay-info">
+                        <h4>PROJECT NEON</h4>
+                        <p>Interactive WebGL Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 FAIZAN. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
